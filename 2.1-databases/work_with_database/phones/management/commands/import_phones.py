@@ -20,7 +20,7 @@ class Command(BaseCommand):
                 price = phone['price'],
                 release_date = phone['release_date'],
                 lte_exists = phone['lte_exists'],
-                slug = str(phone['name']).replace(' ', '_')
+                slug = str(phone['name']).replace(' ', '_') # Доброго времени суток, т.к. в задании csv с списком имен без кириллицы/спец. символов, то в данном случае просто заменил пробелы
             )
             new_phone.save()
         print('import completed')
