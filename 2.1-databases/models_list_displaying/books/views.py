@@ -27,12 +27,14 @@ def show_book(request, date):
     books = {'books':[]}
 
     for book in book_objects:
+
         new_book = {
             'name':book.name,
             'author':book.author,
             'pub_date':book.pub_date 
             }
         books['books'].append(new_book)
+    print (len(books['books']))
     
     context = books
 
