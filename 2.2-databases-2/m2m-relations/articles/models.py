@@ -3,7 +3,7 @@ from django.db import models
 
 class Tag(models.Model):
     #tag = models.CharField(max_length=30)
-    name = models.CharField(max_length=30)
+    name = models.CharField(max_length=30, verbose_name='Тэг')
 
     class Meta:
         verbose_name = 'Тэг'
@@ -21,6 +21,7 @@ class Article(models.Model):
     image = models.ImageField(null=True, blank=True, verbose_name='Изображение',)
     #tags = models.ManyToManyField(Tag, verbose_name='Тэг',)
     #scopes
+    
 
     class Meta:
         verbose_name = 'Статья'
@@ -40,4 +41,4 @@ class Scope(models.Model):
     class Meta:
         verbose_name = 'Тэг'
         verbose_name_plural = 'Тематика'
-
+        ordering = ['-is_main', 'tag']
